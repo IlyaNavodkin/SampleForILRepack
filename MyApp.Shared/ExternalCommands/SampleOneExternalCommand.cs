@@ -4,6 +4,8 @@ using Autodesk.Revit.UI;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyApp.Shared.Services;
+using Serilog.Core;
+using System.Diagnostics;
 
 namespace MyApp.Shared.ExternalCommands;
 
@@ -12,6 +14,9 @@ public sealed class SampleOneExternalCommand : IExternalCommand
 {
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
+        Debug.WriteLine($"Load services GUID {SampleServiceProvider.Guid}");
+        Debug.WriteLine($"Domain NAME {AppDomain.CurrentDomain.FriendlyName}");
+
         var service = SampleServiceProvider.ServiceProvider
             .GetRequiredService<SimpleDimpleService>();
 
