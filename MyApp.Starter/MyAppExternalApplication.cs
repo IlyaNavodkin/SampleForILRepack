@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using MyApp.Shared.Services;
 using MyApp.Starter.Helpers;
 using Serilog;
+using System;
 
 namespace MyApp.Starter;
 
@@ -26,6 +27,7 @@ public class MyAppExternalApplication : IExternalApplication
             var logger = SampleServiceProvider
                 .ServiceProvider.GetRequiredService<ILogger<MyAppExternalApplication>>();
 
+            logger.LogInformation($"Load services GUID {SampleServiceProvider.Guid}");
             logger.LogInformation("Startup complete");
 
             return Result.Succeeded;

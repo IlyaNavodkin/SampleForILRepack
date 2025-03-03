@@ -1,5 +1,6 @@
 ﻿using MyApp.Starter.Extensions;
 using Serilog;
+using System.IO;
 using System.Reflection;
 
 namespace MyApp.Starter.Helpers;

@@ -7,6 +7,8 @@ namespace MyApp.Shared.Services;
 
 public static class SampleServiceProvider
 {
+    public static Guid Guid = Guid.NewGuid();
+
     private static IServiceProvider _serviceProvider;
 
     public static IServiceProvider ServiceProvider => _serviceProvider ??
