@@ -18,7 +18,7 @@ public class MyAppExternalApplication : IExternalApplication
     }
 
     public Result OnStartup(UIControlledApplication uIControlledApplication)
-    {\\pub\dev\00_Shared\01_Incoming\01_Rebels\Stage 2
+    {
         try
         {
             LoggerInitHelper.Init();
