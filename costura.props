@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+	<ItemGroup>
+		<ExcludedProjects Include="MyApp.Shared" />
+	</ItemGroup>
+
+	<PropertyGroup>
+
+		<ExcludeAssemblies>@(ExcludedProjects->'%(Filename)%(Extension)', '|')</ExcludeAssemblies>
+
+		<DisableFody>false</DisableFody>
+		<FodyGenerateXsd>false</FodyGenerateXsd>
+		<FodyVerifyAssembly>false</FodyVerifyAssembly>
+		<MSBuildWarningsAsMessages>FodyVersionMismatch</MSBuildWarningsAsMessages>
+
+		<WeaverConfiguration>
+			<Weavers VerifyAssembly="false">
+				<Costura
+					ExcludeAssemblies="$(ExcludeAssemblies)"
+					CreateTemporaryAssemblies="true"
+					IncludeDebugSymbols="true"
+					IncludeRuntimeReferences="false"
+					UseRuntimeReferencePaths="false"
+					DisableEventSubscription="false"
+					DisableCompression="true"
+					DisableCleanup="false"
+					LoadAtModuleInit="true"
+					IgnoreSatelliteAssemblies="true" />
+			</Weavers>
+		</WeaverConfiguration>
+	</PropertyGroup>
+</Project>

@@ -9,6 +9,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Costura.Fody" Version="6.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="MaterialDesignColors" Version="3.1.0" />
 		<PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
 		<PackageReference Include="MaterialDesignThemes.MahApps" Version="3.1.0" />
@@ -22,11 +26,6 @@
 
 		<PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2022" IncludeAssets="build; compile" PrivateAssets="All" />
 
-		<PackageReference Include="ricaun.ILRepack" Version="1.0.2" IncludeAssets="build; compile" PrivateAssets="All">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
@@ -35,21 +34,24 @@
 		<RevitProgrammFolder>C:\Program Files\Autodesk\Revit $(RevitVersion)</RevitProgrammFolder>
 		<StartArguments>/language ENG</StartArguments>
 	</PropertyGroup>
-
 	
+	<PropertyGroup>
+		<SolutionFilesFolder>$(MSBuildThisFileDirectory)..\</SolutionFilesFolder>
+	</PropertyGroup>
+
+	<Import Project="$(SolutionFilesFolder)\costura.props" />
+
 
 	<ItemGroup>
-		<ILRepackIgnoreReferences Include="Revit" />
-	</ItemGroup>
-
-	
-	<ItemGroup>
-
 		<ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj">
-			<Private>true</Private>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+			<Private>false</Private>
+			<CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+			<IncludeAssets>none</IncludeAssets>
+			<PrivateAssets>none</PrivateAssets>
+			<ExcludeAssets>all</ExcludeAssets>
 		</ProjectReference>
-
 	</ItemGroup>
+
 
 </Project>
