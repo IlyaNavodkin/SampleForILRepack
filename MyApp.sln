@@ -9,9 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Shared", "MyApp.Share
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{4362684B-BD46-43AF-A912-EF06837B3C85}"
 	ProjectSection(SolutionItems) = preProject
-		deps.props = deps.props
-		ilmerge.props = ilmerge.props
 		..\..\..\..\..\ProgramData\Autodesk\Revit\Addins\2022\MyApp.addin = ..\..\..\..\..\ProgramData\Autodesk\Revit\Addins\2022\MyApp.addin
+		deps.props = deps.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.MEP", "MyApp.MEP\MyApp.MEP.csproj", "{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845}"

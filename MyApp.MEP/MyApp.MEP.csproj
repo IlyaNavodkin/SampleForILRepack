@@ -13,16 +13,13 @@
 
 	</PropertyGroup>
 
-
 	<ItemGroup>
+		
 		<ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj">
-			<ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-			<Private>false</Private>
-			<CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
-			<IncludeAssets>none</IncludeAssets>
-			<PrivateAssets>none</PrivateAssets>
-			<ExcludeAssets>all</ExcludeAssets>
+			<Private>true</Private>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</ProjectReference>
+
 	</ItemGroup>
 
 </Project>

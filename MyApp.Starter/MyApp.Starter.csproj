@@ -1,33 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="..\deps.props" />
 	
-
 	<PropertyGroup>
-		
 		<TargetFramework>net48</TargetFramework>
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
 		<RevitVersion>2022</RevitVersion>
 
-		<DebugType>full</DebugType>
-		<DebugSymbols>true</DebugSymbols>
-
 		<StartAction>Program</StartAction>
 		<StartProgram>C:\Program Files\Autodesk\Revit $(RevitVersion)\Revit.exe</StartProgram>
 		<RevitProgrammFolder>C:\Program Files\Autodesk\Revit $(RevitVersion)</RevitProgrammFolder>
 		<StartArguments>/language ENG</StartArguments>
-
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="ricaun.ILRepack" Version="1.0.2" IncludeAssets="build; compile" PrivateAssets="All">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<ILRepackIgnoreReferences Include="Revit" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+
 		<ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj">
-			<ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-			<Private>false</Private>
-			<CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
-			<IncludeAssets>none</IncludeAssets>
-			<PrivateAssets>none</PrivateAssets>
-			<ExcludeAssets>all</ExcludeAssets>
+			<Private>true</Private>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</ProjectReference>
+
+		<ProjectReference Include="..\MyApp.MEP\MyApp.MEP.csproj">
+			<Private>true</Private>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</ProjectReference>
+
 	</ItemGroup>
 
 </Project>
