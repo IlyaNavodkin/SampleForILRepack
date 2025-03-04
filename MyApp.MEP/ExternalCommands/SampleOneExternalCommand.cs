@@ -5,15 +5,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyApp.Shared.Services;
 
-namespace MyApp.Shared.ExternalCommands;
+namespace MyApp.MEP.ExternalCommands;
 
 [Transaction(TransactionMode.Manual)]
 public sealed class SampleOneExternalCommand : IExternalCommand
 {
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
-        var service = SampleServiceProvider.ServiceProvider
-            .GetRequiredService<SimpleDimpleService>();
+        //var service = new SimpleDimpleService();
 
         var externalCommandLogger = SampleServiceProvider.ServiceProvider
             .GetRequiredService<ILogger<SampleOneExternalCommand>>();
@@ -22,7 +21,9 @@ public sealed class SampleOneExternalCommand : IExternalCommand
 
         try
         {
-            service.SayHello();
+            //service.SayHello();
+
+            TaskDialog.Show("Message", "Hello");
 
             return Result.Succeeded;
 

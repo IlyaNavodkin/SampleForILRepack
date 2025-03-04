@@ -5,12 +5,15 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Starter", "MyApp.Starter\MyApp.Starter.csproj", "{C1223B04-4754-4D75-A44C-DFE900E41E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Shared", "MyApp.Shared\MyApp.Shared.csproj", "{1FC19E34-02D1-48E6-A4F5-8FB8CA40D6BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Shared", "MyApp.Shared\MyApp.Shared.csproj", "{1FC19E34-02D1-48E6-A4F5-8FB8CA40D6BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{4362684B-BD46-43AF-A912-EF06837B3C85}"
 	ProjectSection(SolutionItems) = preProject
+		costura.props = costura.props
 		..\..\..\..\..\ProgramData\Autodesk\Revit\Addins\2022\MyApp.addin = ..\..\..\..\..\ProgramData\Autodesk\Revit\Addins\2022\MyApp.addin
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.MEP", "MyApp.MEP\MyApp.MEP.csproj", "{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +29,10 @@ Global
 		{1FC19E34-02D1-48E6-A4F5-8FB8CA40D6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC19E34-02D1-48E6-A4F5-8FB8CA40D6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC19E34-02D1-48E6-A4F5-8FB8CA40D6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

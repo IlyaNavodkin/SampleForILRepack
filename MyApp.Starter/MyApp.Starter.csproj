@@ -43,13 +43,19 @@
 	</ItemGroup>
 
 	
+
 	<ItemGroup>
+	  <ProjectReference Include="..\MyApp.MEP\MyApp.MEP.csproj" />
+	</ItemGroup>
+
+	
+	<!--<ItemGroup>
 
 		<ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj">
 			<Private>true</Private>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</ProjectReference>
 
-	</ItemGroup>
+	</ItemGroup>-->
 
 </Project>

@@ -27,8 +27,6 @@ public static class SampleServiceProvider
             loggingBuilder.AddSerilog(Log.Logger);
         });
 
-        services.AddSingleton<SimpleDimpleService>();
-
         _serviceProvider = services.BuildServiceProvider();
     }
 }

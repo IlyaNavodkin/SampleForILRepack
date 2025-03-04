@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>12</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="MaterialDesignColors" Version="3.1.0" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="MaterialDesignThemes" Version="5.1.0" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="MaterialDesignThemes.MahApps" Version="3.1.0" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="MongoDB.Driver" Version="3.2.1" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.2" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="ricaun.ILRepack" Version="1.0.2" IncludeAssets="build; compile" PrivateAssets="All">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Serilog.Extensions.Logging" Version="9.0.0" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="Serilog" Version="4.2.0" IncludeAssets="build; compile" PrivateAssets="All"/>
+		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" IncludeAssets="build; compile" PrivateAssets="All" />
+
+		<PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2022" IncludeAssets="build; compile" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ILRepackIgnoreReferences Include="Revit" />
+	</ItemGroup>
+
+</Project>
