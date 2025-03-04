@@ -2,9 +2,6 @@
 
 <Project>
 
-	<ItemGroup>
-		<ExcludedProjects Include="MyApp.Shared" />
-	</ItemGroup>
 
 	<PropertyGroup>
 
@@ -15,19 +12,22 @@
 		<FodyVerifyAssembly>false</FodyVerifyAssembly>
 		<MSBuildWarningsAsMessages>FodyVersionMismatch</MSBuildWarningsAsMessages>
 
+
 		<WeaverConfiguration>
 			<Weavers VerifyAssembly="false">
 				<Costura
 					ExcludeAssemblies="$(ExcludeAssemblies)"
 					CreateTemporaryAssemblies="true"
 					IncludeDebugSymbols="true"
-					IncludeRuntimeReferences="false"
+					IncludeRuntimeReferences="true"
 					UseRuntimeReferencePaths="false"
-					DisableEventSubscription="false"
-					DisableCompression="true"
+					DisableEventSubscription="true"
+					DisableCompression="false"
 					DisableCleanup="false"
 					LoadAtModuleInit="true"
-					IgnoreSatelliteAssemblies="true" />
+					IgnoreSatelliteAssemblies="true">
+					
+				</Costura>
 			</Weavers>
 		</WeaverConfiguration>
 	</PropertyGroup>

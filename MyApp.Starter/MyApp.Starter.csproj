@@ -28,6 +28,10 @@
 
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj" />
+	</ItemGroup>
+
 	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
 		<StartAction>Program</StartAction>
 		<StartProgram>C:\Program Files\Autodesk\Revit $(RevitVersion)\Revit.exe</StartProgram>
@@ -40,18 +44,6 @@
 	</PropertyGroup>
 
 	<Import Project="$(SolutionFilesFolder)\costura.props" />
-
-
-	<ItemGroup>
-		<ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj">
-			<ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-			<Private>false</Private>
-			<CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
-			<IncludeAssets>none</IncludeAssets>
-			<PrivateAssets>none</PrivateAssets>
-			<ExcludeAssets>all</ExcludeAssets>
-		</ProjectReference>
-	</ItemGroup>
 
 
 </Project>
