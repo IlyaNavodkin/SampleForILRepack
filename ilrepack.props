@@ -1,0 +1,16 @@
+<Project>
+
+	<ItemGroup>
+		<PackageReference Include="ricaun.ILRepack" Version="1.0.2" IncludeAssets="build; compile" PrivateAssets="All">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<ILRepackIgnoreReferences Include="Revit" />
+	</ItemGroup>
+
+
+</Project>

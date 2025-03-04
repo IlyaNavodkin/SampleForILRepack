@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<Import Project="..\deps.props" />
+	<Import Project="..\ilrepack.props" />
 	
 	<PropertyGroup>
 		<TargetFramework>net48</TargetFramework>
@@ -13,19 +14,6 @@
 		<RevitProgrammFolder>C:\Program Files\Autodesk\Revit $(RevitVersion)</RevitProgrammFolder>
 		<StartArguments>/language ENG</StartArguments>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="ricaun.ILRepack" Version="1.0.2" IncludeAssets="build; compile" PrivateAssets="All">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-
-	</ItemGroup>
-
-	<ItemGroup>
-		<ILRepackIgnoreReferences Include="Revit" />
-	</ItemGroup>
-
 
 	<ItemGroup>
 
