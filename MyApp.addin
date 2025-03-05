@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Assembly>"C:\Users\ilyas\source\repos\MyApp\MyApp.Starter\bin\Release\net48\MyApp.Starter.dll"</Assembly>
+    <AddInId>abb5e1cd-50c8-4871-9b9d-584ec63af2b6</AddInId>
+    <FullClassName>MyApp.Starter.MyAppExternalApplication</FullClassName>
+    <Name>Sample</Name>
+    <VendorId>Sample</VendorId>
+    <VendorDescription>IlyaNavodkin</VendorDescription>
+  </AddIn>
+</RevitAddIns>
