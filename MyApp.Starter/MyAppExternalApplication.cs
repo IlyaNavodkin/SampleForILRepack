@@ -1,8 +1,8 @@
 ﻿using Autodesk.Revit.UI;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyApp.Shared;
 using MyApp.Shared.Services;
-using MyApp.Starter.Helpers;
 using Serilog;
 using System;
 
@@ -21,7 +21,7 @@ public class MyAppExternalApplication : IExternalApplication
     {
         try
         {
-            LoggerInitHelper.Init();
+            SerilogLogger.Init();
             SampleServiceProvider.SetUp(uIControlledApplication);
 
             var logger = SampleServiceProvider

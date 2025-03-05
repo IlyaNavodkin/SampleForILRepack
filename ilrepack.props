@@ -8,7 +8,15 @@
 
 	</ItemGroup>
 
+	<PropertyGroup>
+		
+		<ILRepackImportance>High</ILRepackImportance>
+		<ILRepackCommandImportance>High</ILRepackCommandImportance>
+
+	</PropertyGroup>
+
 	<ItemGroup>
+		<!-- Существующее исключение для Revit -->
 		<ILRepackIgnoreReferences Include="Revit" />
 	</ItemGroup>
 
