@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace MyApp.Shared.Services;
+namespace MyApp.Shared.Extensions;
 
 public static class AssemblyExtensions
 {

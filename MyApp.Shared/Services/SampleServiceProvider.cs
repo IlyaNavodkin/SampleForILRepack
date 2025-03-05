@@ -2,6 +2,7 @@
 using DnsClient;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyApp.RevitUi.Services;
 using Serilog;
 using System;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
@@ -24,24 +25,12 @@ public static class SampleServiceProvider
             throw new InvalidOperationException($"{nameof(SampleServiceProvider)} can only be initialized once.");
         var services = new ServiceCollection();
 
-        services.AddLogging(loggingBuilder =>
-        {
-            loggingBuilder.ClearProviders(); 
-            loggingBuilder.AddProvider(new SerilogLoggerProvider());
-        });
+        services.AddSingleton(controlledApplication);
+        services.AddSingleton<ILogger, SerilogLogger>();
 
         services.AddSingleton<UiComponentFactory>();
         services.AddSingleton<RevitUiConfigurator>();
 
         _serviceProvider = services.BuildServiceProvider();
-    }
-
-    public static ILogger GetLogger(string categoryName)
-    {
-        var loggerFactory = ServiceProvider.GetService<ILoggerFactory>();
-        if (loggerFactory == null)
-            throw new InvalidOperationException("ILoggerFactory is not registered in the service provider.");
-
-        return loggerFactory.CreateLogger(categoryName);
     }
 }

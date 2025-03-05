@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TaskDialog = Autodesk.Revit.UI.TaskDialog;
 
-namespace MyApp.Shared.Services;
-public class SimpleDimpleService(ILogger<SimpleDimpleService> _logger)
+namespace MyApp.MEP.Services;
+public class SimpleDimpleService(ILogger _logger)
 {
     public void SayHello()
     {

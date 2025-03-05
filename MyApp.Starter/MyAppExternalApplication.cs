@@ -5,6 +5,7 @@ using MyApp.Shared;
 using MyApp.Shared.Services;
 using Serilog;
 using System;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace MyApp.Starter;
 
@@ -25,9 +26,14 @@ public class MyAppExternalApplication : IExternalApplication
             SampleServiceProvider.SetUp(uIControlledApplication);
 
             var logger = SampleServiceProvider
-                .ServiceProvider.GetRequiredService<ILogger<MyAppExternalApplication>>();
+                .ServiceProvider.GetRequiredService<ILogger>();
 
             logger.LogInformation($"Load services GUID {SampleServiceProvider.Guid}");
+
+            var uiService = SampleServiceProvider.ServiceProvider.GetRequiredService<RevitUiConfigurator>();
+
+            uiService.ConfigureRevitUiComponents();
+
             logger.LogInformation("Startup complete");
 
             return Result.Succeeded;

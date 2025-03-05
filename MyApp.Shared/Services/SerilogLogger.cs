@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MyApp.Shared.Extensions;
 using Serilog;
 using Serilog.Events;
 using System;
@@ -10,13 +11,6 @@ namespace MyApp.Shared.Services;
 
 public class SerilogLogger : ILogger
 {
-    private readonly string _categoryName;
-
-    public SerilogLogger(string categoryName)
-    {
-        _categoryName = categoryName;
-    }
-
     public static void Init()
     {
         var assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -28,7 +22,7 @@ public class SerilogLogger : ILogger
         }
 
         Serilog.Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug() 
+            .MinimumLevel.Debug()
             .WriteTo.File(Path.Combine(logDirectory, "log-.txt"), rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
@@ -59,11 +53,11 @@ public class SerilogLogger : ILogger
 
         if (exception != null)
         {
-            Serilog.Log.Logger.Write(serilogLevel, exception, "[{Category}] {EventId} - {Message}", _categoryName, eventId.Id, message);
+            Serilog.Log.Logger.Write(serilogLevel, exception, "[{Category}] {EventId} - {Message}", "PLUGIN", eventId.Id, message);
         }
         else
         {
-            Serilog.Log.Logger.Write(serilogLevel, "[{Category}] {EventId} - {Message}", _categoryName, eventId.Id, message);
+            Serilog.Log.Logger.Write(serilogLevel, "[{Category}] {EventId} - {Message}", "PLUGIN", eventId.Id, message);
         }
     }
 

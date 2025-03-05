@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Windows.Media;
 using RibbonPanel = Autodesk.Revit.UI.RibbonPanel;
 
-namespace MyApp.Shared.Services;
+namespace MyApp.RevitUi.Services;
 public class UiComponentFactory
 {
     private readonly ILogger _logger;
@@ -29,13 +29,13 @@ public class UiComponentFactory
         _logger.LogInformation("Создаю кнопку для команды: {ClassName}", classFullName);
 
         var pushButtonName = buttonName;
-        var externalCommandName = classFullName.Split('.').Last(); 
+        var externalCommandName = classFullName.Split('.').Last();
 
         var pushButtonData = new PushButtonData(
-            externalCommandName, 
-            pushButtonName,     
-            assemblyPath,    
-            classFullName    
+            externalCommandName,
+            pushButtonName,
+            assemblyPath,
+            classFullName
         );
 
         pushButtonData.LargeImage = largeIcon;

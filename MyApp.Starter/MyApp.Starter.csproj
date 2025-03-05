@@ -27,6 +27,11 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</ProjectReference>
 
+		<ProjectReference Include="..\MyApp.RevitUi\MyApp.RevitUi.csproj">
+			<Private>true</Private>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</ProjectReference>
+
 	</ItemGroup>
 
 </Project>
