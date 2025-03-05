@@ -1,11 +1,11 @@
-﻿using Autodesk.Revit.UI;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.UI;
 using Microsoft.Extensions.Logging;
-using MyApp.Shared;
+using MyApp.Logging;
 using MyApp.Shared.Services;
+using MyApp.Starter.Helpers;
 using Serilog;
 using System;
-using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace MyApp.Starter;
 
@@ -22,29 +22,23 @@ public class MyAppExternalApplication : IExternalApplication
     {
         try
         {
-            SerilogLogger.Init();
+            AppLogger.Info("Starting application");
+
             SampleServiceProvider.SetUp(uIControlledApplication);
+            RevitComponentResolver.ConfigureRevitComponents();
 
-            var logger = SampleServiceProvider
-                .ServiceProvider.GetRequiredService<ILogger>();
-
-            logger.LogInformation($"Load services GUID {SampleServiceProvider.Guid}");
-
-            var uiService = SampleServiceProvider.ServiceProvider.GetRequiredService<RevitUiConfigurator>();
-
-            uiService.ConfigureRevitUiComponents();
-
-            logger.LogInformation("Startup complete");
+            AppLogger.Info("Startup success");
 
             return Result.Succeeded;
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Startup failed");
+            AppLogger.Error("Startup failed", ex);
 
             TaskDialog.Show("Ribbon Sample", ex.ToString());
 
             return Result.Failed;
         }
     }
+
 }

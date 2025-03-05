@@ -1,6 +1,7 @@
 ﻿using Autodesk.Revit.UI;
 using Autodesk.Windows;
 using Microsoft.Extensions.Logging;
+using MyApp.Logging;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -10,13 +11,6 @@ using RibbonPanel = Autodesk.Revit.UI.RibbonPanel;
 namespace MyApp.RevitUi.Services;
 public class UiComponentFactory
 {
-    private readonly ILogger _logger;
-
-    public UiComponentFactory(ILogger logger)
-    {
-        _logger = logger;
-    }
-
     public PushButtonData CreatePushButton(string buttonName,
             string classFullName,
             string assemblyPath,
@@ -26,7 +20,7 @@ public class UiComponentFactory
             ImageSource toolTipImage = null,
             string longDescription = null)
     {
-        _logger.LogInformation("Создаю кнопку для команды: {ClassName}", classFullName);
+        AppLogger.Info("Starting Create Button");
 
         var pushButtonName = buttonName;
         var externalCommandName = classFullName.Split('.').Last();
@@ -50,7 +44,7 @@ public class UiComponentFactory
     public RibbonPanel CreateRibbonPanel(UIControlledApplication application, RibbonTab ribbonTab,
         string panelName, string panelTittle)
     {
-        _logger.LogInformation("Факторю риббон панель");
+        AppLogger.Info("Starting Create Ribbon Panel");
 
         RibbonPanel ribbonPanel = null;
         foreach (var internalRibbonPanel in ribbonTab.Panels)
@@ -73,7 +67,7 @@ public class UiComponentFactory
 
     public RibbonTab CreateRibbonTab(UIControlledApplication application, string tabPanelName)
     {
-        _logger.LogInformation("Факторю таб");
+        AppLogger.Info("Starting Create Ribbon Tab");
 
         var ribbonControlTabs = ComponentManager.Ribbon.Tabs;
         var ribbonTab = ribbonControlTabs.FirstOrDefault(tab => tab.Name == tabPanelName);

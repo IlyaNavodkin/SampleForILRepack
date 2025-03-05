@@ -1,6 +1,9 @@
-﻿using Autodesk.Revit.UI;
+﻿using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 using Autodesk.Windows;
 using Microsoft.Extensions.Logging;
+using MyApp.Logging;
 using MyApp.RevitUi.Services;
 using System.Reflection;
 
@@ -10,19 +13,17 @@ public partial class RevitUiConfigurator
 {
     private readonly UiComponentFactory _uiComponentCreateUtil;
     private readonly UIControlledApplication _uIControlledApplication;
-    private readonly ILogger _logger;
 
     public RevitUiConfigurator(UIControlledApplication uIControlledApplication,
-        UiComponentFactory uiComponentCreateUtil, ILogger logger)
+        UiComponentFactory uiComponentCreateUtil)
     {
         _uiComponentCreateUtil = uiComponentCreateUtil;
         _uIControlledApplication = uIControlledApplication;
-        _logger = logger;
     }
 
     public RibbonTab ConfigureRevitUiComponents()
     {
-        _logger.LogInformation("Делаю кнопочки");
+        AppLogger.Info("Делаю кнопочки");
 
         var bimdataTab = _uiComponentCreateUtil.CreateRibbonTab(_uIControlledApplication, "MyApp.MEP");
 

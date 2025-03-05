@@ -2,6 +2,7 @@
 using DnsClient;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyApp.Logging;
 using MyApp.RevitUi.Services;
 using Serilog;
 using System;
@@ -26,11 +27,13 @@ public static class SampleServiceProvider
         var services = new ServiceCollection();
 
         services.AddSingleton(controlledApplication);
-        services.AddSingleton<ILogger, SerilogLogger>();
 
         services.AddSingleton<UiComponentFactory>();
         services.AddSingleton<RevitUiConfigurator>();
+        services.AddSingleton<RevitUpdaterLoader>();
 
         _serviceProvider = services.BuildServiceProvider();
+
+        AppLogger.Info("Di container is configured");
     }
 }

@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	
+
 	<Import Project="..\deps.props" />
 
 	<PropertyGroup>
@@ -12,14 +12,5 @@
 		<DebugSymbols>true</DebugSymbols>
 
 	</PropertyGroup>
-
-	<ItemGroup>
-		
-		<ProjectReference Include="..\MyApp.Logging\MyApp.Logging.csproj">
-			<Private>true</Private>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</ProjectReference>
-
-	</ItemGroup>
 
 </Project>

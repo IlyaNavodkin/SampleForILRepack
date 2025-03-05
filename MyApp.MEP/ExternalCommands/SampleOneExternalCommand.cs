@@ -3,6 +3,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyApp.Logging;
 using MyApp.MEP.Services;
 using MyApp.Shared.Services;
 using System;
@@ -14,14 +15,11 @@ public sealed class SampleOneExternalCommand : IExternalCommand
 {
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
-        var logger = SampleServiceProvider.ServiceProvider
-            .GetRequiredService<ILogger>();
-
         try
         {
-            var service = new SimpleDimpleService(logger);
+            var service = new SimpleDimpleService();
 
-            logger.LogInformation("Run command");
+            AppLogger.Info("Run command");
 
             service.SayHello();
 
@@ -30,7 +28,7 @@ public sealed class SampleOneExternalCommand : IExternalCommand
         }
         catch (Exception exception)
         {
-            logger.LogError(exception, null);
+            AppLogger.Error(exception);
 
             return Result.Failed;
         }

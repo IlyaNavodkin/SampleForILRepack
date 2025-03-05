@@ -19,7 +19,12 @@
 			<Private>true</Private>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</ProjectReference>
-		
+
+		<ProjectReference Include="..\MyApp.Logging\MyApp.Logging.csproj">
+			<Private>true</Private>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</ProjectReference>
+
 	</ItemGroup>
 
 
