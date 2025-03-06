@@ -20,6 +20,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.RevitUi", "MyApp.Revi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Logging", "MyApp.Logging\MyApp.Logging.csproj", "{8960D191-60C8-403F-A4FA-51DCDA39AD1C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{72935DBD-EB74-4AE9-B652-2FDAF14ED9F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{952D2B22-B86C-43E9-918E-B69FFCC52D05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{FF05C39C-6CA2-48D9-950E-EC96FE1DB434}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +52,18 @@ Global
 		{8960D191-60C8-403F-A4FA-51DCDA39AD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8960D191-60C8-403F-A4FA-51DCDA39AD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8960D191-60C8-403F-A4FA-51DCDA39AD1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF05C39C-6CA2-48D9-950E-EC96FE1DB434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF05C39C-6CA2-48D9-950E-EC96FE1DB434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF05C39C-6CA2-48D9-950E-EC96FE1DB434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF05C39C-6CA2-48D9-950E-EC96FE1DB434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B8AE5C4-0BE5-4AA7-A0DE-ECFBAAAAC845} = {952D2B22-B86C-43E9-918E-B69FFCC52D05}
+		{DE7721FE-EBB7-4D5F-B3E1-92A54C286CF4} = {72935DBD-EB74-4AE9-B652-2FDAF14ED9F3}
+		{8960D191-60C8-403F-A4FA-51DCDA39AD1C} = {72935DBD-EB74-4AE9-B652-2FDAF14ED9F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0B05F40-D665-451C-BCE4-C5F04C46D7DB}

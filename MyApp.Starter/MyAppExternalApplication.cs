@@ -6,6 +6,7 @@ using MyApp.Shared.Services;
 using MyApp.Starter.Helpers;
 using Serilog;
 using System;
+using System.Collections.Generic;
 
 namespace MyApp.Starter;
 
@@ -42,3 +43,4 @@ public class MyAppExternalApplication : IExternalApplication
     }
 
 }
+

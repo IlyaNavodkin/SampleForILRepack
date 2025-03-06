@@ -13,6 +13,7 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
 		<PackageReference Include="Serilog.Enrichers.Process" Version="3.0.0" />
 		<PackageReference Include="Serilog.Enrichers.WithCaller" Version="1.3.0" />
+		<PackageReference Include="RevitTask" Version="3.0.0" />
 
 		<PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2022" IncludeAssets="build; compile" PrivateAssets="All" />
 

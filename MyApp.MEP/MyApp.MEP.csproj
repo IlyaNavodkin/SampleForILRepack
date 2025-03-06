@@ -11,7 +11,16 @@
 		<DebugType>full</DebugType>
 		<DebugSymbols>true</DebugSymbols>
 
+		<UseWPF>true</UseWPF>
+
 	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Добавляем библиотеки WPF -->
+		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+	</ItemGroup>
 
 	<ItemGroup>
 		
